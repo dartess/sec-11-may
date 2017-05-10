@@ -11,127 +11,398 @@
 
 	<header class="caption">
 		<h1>.SEC: основы веб-программирования</h1>
-		<h2>Занятие 7. Каскадные таблицы стилей.</h2>
+		<h2>Дополнение к сетке.<br>Стиль кода.<br>Цвет.<br>Типографика.<br>Позиционирование.<br>Декоративные элементы.<br>Формы.<br>Протоколы и псевдопротоколы.</h2>
 	</header>
 
 	<section class="slide">
-		<h2>CSS</h2>
-		<p>Cascading Style Sheets</p>
-		<p>Каскадные таблицы стилей</p>
-		<p class="next">1996г.</p>
-		<p class="next">CSS3 – 2011г. – наше время</p>
-	</section>
-
-	<section class="slide">
-		<h2>Как настраивался внешний вид ранее</h2>
-		<pre>
-<code>&lt;h1 align="center"&gt;</code>
-<code>  &lt;font color="red" size="6"&gt;Заголовок&lt;/font&gt;</code>
-<code>&lt;/h1&gt;</code>
-		</pre>
-	</section>
-
-	<section class="slide">
-		<h2>Из чего состоит CSS</h2>
-		<ul>
-			<li>Селекторы</li>
-			<li>Правила</li>
-			<li>Свойства</li>
-			<li>Значения</li>
-			<li>Функции</li>
-			<li>Директивы</li>
-		</ul>
-	</section>
-
-	<section class="slide">
-		<h2>Из чего состоит CSS</h2>
-		<div class="double" style="max-height: 85vh">
-			<div style="display: inline-block">
-		<pre>
-<code>h1 {</code>
-<code>  color: red;</code>
-<code>  font-size: 20px;</code>
-<code>  text-align: center;</code>
-<code>  width: calc(100% - 15px);</code>
+		<h2>Дополнение к сеткам</h2>
+		<div class="clearfix" style="background: gray; width: 700px;">
+			<img src="https://s-media-cache-ak0.pinimg.com/236x/25/ae/85/25ae85d955070dc969942ae6ec939d0f.jpg" alt="" width="200">
+			<img src="https://s-media-cache-ak0.pinimg.com/236x/25/ae/85/25ae85d955070dc969942ae6ec939d0f.jpg" alt="" width="200">
+			<img src="https://s-media-cache-ak0.pinimg.com/236x/25/ae/85/25ae85d955070dc969942ae6ec939d0f.jpg" alt="" width="200">
+		</div>
+<pre class="next">
+<code>.cat {</code>
+<code>  width: 200px;</code>
 <code>}</code>
-		</pre>
-		<br>
-		<br>
-		<br>
-		<br>
-			</div>
-			<div style="display: inline-block">
-		<pre>
-<code>@media (max-width: 767px) {</code>
-<code>  h1 {</code>
-<code>    font-size: 18px;</code>
-<code>  }</code>
+</pre>
+	</section>
+
+	<section class="slide">
+		<h2>Дополнение к сеткам</h2>
+		<div class="clearfix" style="background: gray; width: 700px;">
+			<img style="float: left;" src="https://s-media-cache-ak0.pinimg.com/236x/25/ae/85/25ae85d955070dc969942ae6ec939d0f.jpg" alt="" width="200">
+			<img style="float: left;" src="https://s-media-cache-ak0.pinimg.com/236x/25/ae/85/25ae85d955070dc969942ae6ec939d0f.jpg" alt="" width="200">
+			<img style="float: left;" src="https://s-media-cache-ak0.pinimg.com/236x/25/ae/85/25ae85d955070dc969942ae6ec939d0f.jpg" alt="" width="200">
+		</div>
+<pre>
+<code>.cat {</code>
+<code>  width: 200px;</code>
+<code>  float: left;</code>
 <code>}</code>
-		</pre>
-			</div>
+</pre>
+	</section>
+
+	<section class="slide">
+		<h2>Дополнение к сеткам</h2>
+		<div class="clearfix" style="background: gray; width: 700px;">
+			<img style="float: left; margin-right: 50px;" src="https://s-media-cache-ak0.pinimg.com/236x/25/ae/85/25ae85d955070dc969942ae6ec939d0f.jpg" alt="" width="200">
+			<img style="float: left; margin-right: 50px;" src="https://s-media-cache-ak0.pinimg.com/236x/25/ae/85/25ae85d955070dc969942ae6ec939d0f.jpg" alt="" width="200">
+			<img style="float: left; margin-right: 50px;" src="https://s-media-cache-ak0.pinimg.com/236x/25/ae/85/25ae85d955070dc969942ae6ec939d0f.jpg" alt="" width="200">
+		</div>
+<pre>
+<code>  ...</code>
+<code>  margin-right: 50px;</code>
+<code>}</code>
+</pre>
+<div class="next" style="position: absolute; bottom: 20px; right: 20px; color: red;">250 + 250 + 250 > 700</div>
+	</section>
+
+	<section class="slide">
+		<h2>Дополнение к сеткам</h2>
+		<div class="clearfix" style="background: gray; width: 700px;">
+			<img style="float: left; margin-right: 50px;" src="https://s-media-cache-ak0.pinimg.com/236x/25/ae/85/25ae85d955070dc969942ae6ec939d0f.jpg" alt="" width="200">
+			<img style="float: left; margin-right: 50px;" src="https://s-media-cache-ak0.pinimg.com/236x/25/ae/85/25ae85d955070dc969942ae6ec939d0f.jpg" alt="" width="200">
+			<img style="float: left;" src="https://s-media-cache-ak0.pinimg.com/236x/25/ae/85/25ae85d955070dc969942ae6ec939d0f.jpg" alt="" width="200">
+		</div>
+<pre class="next">
+<code>.cat:nth-child(1), .cat:nth-child(2) {</code>
+<code>  margin-right: 50px;</code>
+<code>}</code>
+</pre>
+	</section>
+
+	<section class="slide">
+		<h2>Дополнение к сеткам</h2>
+		<div class="clearfix" style="background: gray; width: 700px;">
+			<img style="float: left; margin-right: 50px;" src="https://s-media-cache-ak0.pinimg.com/236x/25/ae/85/25ae85d955070dc969942ae6ec939d0f.jpg" alt="" width="200">
+			<img style="float: left; margin-right: 50px;" src="https://s-media-cache-ak0.pinimg.com/236x/25/ae/85/25ae85d955070dc969942ae6ec939d0f.jpg" alt="" width="200">
+			<img style="float: left;" src="https://s-media-cache-ak0.pinimg.com/236x/25/ae/85/25ae85d955070dc969942ae6ec939d0f.jpg" alt="" width="200">
+		</div>
+<pre class="">
+<code>.cat:nth-child(1), .cat:nth-child(2) {</code>
+<code style="color: red;">  margin-right: 50px;</code>
+<code>}</code>
+</pre>
+	</section>
+
+	<section class="slide">
+		<h2>Дополнение к сеткам</h2>
+		<div class="clearfix" style="background: gray; width: 700px;">
+			<img style="float: left; margin-right: 50px;" src="https://s-media-cache-ak0.pinimg.com/236x/25/ae/85/25ae85d955070dc969942ae6ec939d0f.jpg" alt="" width="200">
+			<img style="float: left; margin-right: 50px;" src="https://s-media-cache-ak0.pinimg.com/236x/25/ae/85/25ae85d955070dc969942ae6ec939d0f.jpg" alt="" width="200">
+			<img style="float: left;" src="https://s-media-cache-ak0.pinimg.com/236x/25/ae/85/25ae85d955070dc969942ae6ec939d0f.jpg" alt="" width="200">
+			<img style="float: left;" src="https://s-media-cache-ak0.pinimg.com/236x/25/ae/85/25ae85d955070dc969942ae6ec939d0f.jpg" alt="" width="200">
+			<img style="float: left;" src="https://s-media-cache-ak0.pinimg.com/236x/25/ae/85/25ae85d955070dc969942ae6ec939d0f.jpg" alt="" width="200">
+			<img style="float: left;" src="https://s-media-cache-ak0.pinimg.com/236x/25/ae/85/25ae85d955070dc969942ae6ec939d0f.jpg" alt="" width="200">
 		</div>
 	</section>
 
 	<section class="slide">
-		<h2>Откуда берётся CSS</h2>
+		<h2>Дополнение к сеткам</h2>
+<pre>
+<code>.cat {</code>
+<code>  width: 200px;</code>
+<code>  float: left;</code>
+<code>  margin-right: 50px;</code>
+<code>}</code>
+</pre>
+<pre class="next">
+<code>.cat:nth-child(3n) {</code>
+<code>  margin-right: 0;</code>
+<code>}</code>
+</pre>
+	</section>
+
+	<section class="slide">
+		<h2>Дополнение к сеткам</h2>
+		<div class="clearfix" style="background: gray; width: 700px;">
+			<img style="float: left; margin-right: 50px;" src="https://s-media-cache-ak0.pinimg.com/236x/25/ae/85/25ae85d955070dc969942ae6ec939d0f.jpg" alt="" width="200">
+			<img style="float: left; margin-right: 50px;" src="https://s-media-cache-ak0.pinimg.com/236x/25/ae/85/25ae85d955070dc969942ae6ec939d0f.jpg" alt="" width="200">
+			<img style="float: left;" src="https://s-media-cache-ak0.pinimg.com/236x/25/ae/85/25ae85d955070dc969942ae6ec939d0f.jpg" alt="" width="200">
+			<img style="float: left; margin-right: 50px;" src="https://s-media-cache-ak0.pinimg.com/236x/25/ae/85/25ae85d955070dc969942ae6ec939d0f.jpg" alt="" width="200">
+			<img style="float: left; margin-right: 50px;" src="https://s-media-cache-ak0.pinimg.com/236x/25/ae/85/25ae85d955070dc969942ae6ec939d0f.jpg" alt="" width="200">
+			<img style="float: left;" src="https://s-media-cache-ak0.pinimg.com/236x/25/ae/85/25ae85d955070dc969942ae6ec939d0f.jpg" alt="" width="200">
+		</div>
+	</section>
+
+	<section class="slide">
+		<h2>Дополнение к сеткам</h2>
+		<img src="https://i.gyazo.com/c915e35b7b12842278a17d42b2a07b7a.png" alt="">
+	</section>
+
+	<section class="slide">
+		<h2>Дополнение к сеткам</h2>
+<pre>
+<code>.cat {</code>
+<code>  width: 200px;</code>
+<code>  float: left;</code>
+<code>}</code>
+</pre>
+<pre>
+<code>.cat:not(:nth-child(3n)) {</code>
+<code>  margin-right: 50px;</code>
+<code>}</code>
+</pre>
+	</section>
+
+	<section class="slide">
+		<h2>Дополнение к сеткам</h2>
+		<div class="clearfix" style="background: gray; width: 700px;">
+			<img style="float: left; margin-right: 50px;" src="https://s-media-cache-ak0.pinimg.com/236x/25/ae/85/25ae85d955070dc969942ae6ec939d0f.jpg" alt="" width="200">
+			<img style="float: left; margin-right: 50px;" src="https://s-media-cache-ak0.pinimg.com/236x/25/ae/85/25ae85d955070dc969942ae6ec939d0f.jpg" alt="" width="200">
+			<img style="float: left;" src="https://s-media-cache-ak0.pinimg.com/236x/25/ae/85/25ae85d955070dc969942ae6ec939d0f.jpg" alt="" width="200">
+			<img style="float: left; margin-right: 50px; margin-top: 10px;" src="https://s-media-cache-ak0.pinimg.com/236x/25/ae/85/25ae85d955070dc969942ae6ec939d0f.jpg" alt="" width="200">
+			<img style="float: left; margin-right: 50px; margin-top: 10px;" src="https://s-media-cache-ak0.pinimg.com/236x/25/ae/85/25ae85d955070dc969942ae6ec939d0f.jpg" alt="" width="200">
+			<img style="float: left; margin-top: 10px;" src="https://s-media-cache-ak0.pinimg.com/236x/25/ae/85/25ae85d955070dc969942ae6ec939d0f.jpg" alt="" width="200">
+		</div>
+<pre class="next">
+<code>.cat:nth-child(n+3) {</code>
+<code>  margin-top: 10px;</code>
+<code>}</code>
+</pre>
+	</section>
+
+	<section class="slide">
+		<h2>Дополнение к сеткам</h2>
+		<a href="#" class="preview">
+			<span class="preview-title">Отличные новости! Очень, очень хорошие!</span>
+			<span class="preview-decription">Теперь у нас есть отличные новости!</span>
+			<span class="preview-image"><img class="preview-image" src="https://i.gyazo.com/e390ca52f002914012a180974e96114d.png" alt=""></span>
+			<button class="preview-button" type="button" tabindex="-1">Прочитать</button>
+		</a>
+		<style>
+			.preview {
+				display: block;
+				width: 300px;
+				box-shadow: 0 0 10px 5px black;
+				text-decoration: none;
+				font-size: 20px;
+				line-height: 1.2;
+				text-align: center;
+				padding: 30px 20px;
+				background: none !important;
+			}
+
+			.preview > * {
+				display: block;
+				color: #000;
+			}
+
+			.preview-title {
+				margin-bottom: 0.5em;
+			}
+
+			.preview-decription {
+				margin-bottom: 1em;
+			}
+
+			.preview-image {
+				margin-left: -20px;
+				margin-right: -20px;
+			}
+
+			.preview-image img {
+				width: 100%;
+			}
+
+			.preview-button {
+				display: inline-block;
+				width: 100%;
+			}
+		</style>
+	</section>
+
+	<section class="slide">
+		<h2>Правила хорошего тона<br> при написании кода</h2>
 		<ul>
-			<li class="next">Стили из подключаемых файлов</li>
-			<li class="next">Стили в теге style</li>
-			<li class="next">Инлайновые стили, атрибут style</li>
-			<li class="next">Стили браузера</li>
+			<li class="next">Единообразие вложенности</li>
+			<li class="next">Единообразие отступов</li>
+			<li class="next">Единообразие написания кода</li>
+			<li class="next">Единообразие в названии классов и файлов</li>
+			<li class="next">Класс — первым атрибутом</li>
 			<li class="next">...</li>
+			<li class="next">Код-гайды</li>
 		</ul>
 	</section>
 
 	<section class="slide">
-		<h2>Селекторы</h2>
+		<h2>Что нужно подключить первым делом</h2>
+		<ul class="next">
+			<li>reset.css</li>
+			<li>ИЛИ normalize.css</li>
+		</ul>
+	</section>
+
+	<section class="slide">
+		<h2>Цвет</h2>
+	</section>
+
+	<section class="slide">
+		<h2>Системы счисления</h2>
+		<dl>
+			<dt>десятичная</dt>
+			<dd class="next">129000</dd>
+			<dt>двоичная</dt>
+			<dd class="next">1100010111010</dd>
+			<dt>шестнадцатеричная</dt>
+			<dd class="next">10FA9CE80</dd>
+		</dl>
+	</section>
+
+	<section class="slide">
+		<h2>Системы счисления</h2>
+		<p>Десятичная система</p>
+		<p class="next">0123456789</p>
+		<p class="next">19 + 1 = <span class="next">20</span></p>
+		<p>Шестнадцатеричная система</p>
+		<p class="next">0123456789ABCDEF</p>
+		<p class="next">19 + 1 = <span class="next">1A</span></p>
+		<p class="next">2F + 1 = <span class="next">30</span></p>
+	</section>
+
+	<section class="slide">
+		<h2>Системы счисления</h2>
+		<p>0F = <span class="next">15</span></p>
+		<p class="next">10 = <span class="next">16</span></p>
+	</section>
+
+	<section class="slide">
+		<h2>Цвет в компьютере</h2>
+		<p class="next">Изображение состоит из пикселей</p>
+		<p class="next">Пиксель состоит из трёх частей</p>
+		<img src="https://i.ytimg.com/vi/Q-dfmRfctmU/hqdefault.jpg" alt="" class="next">
+	</section>
+
+	<section class="slide">
+		<h2>Цветовая модель RGB</h2>
 		<ul>
-			<li class="next">Селекторы по тегу</li>
-			<li class="next">Селекторы по id</li>
-			<li class="next">Селекторы по классу</li>
-			<li class="next">Селекторы по атрибуту+</li>
-			<li class="next">Вложенные селекторы+</li>
-			<li class="next">Соседние и родственные селекторы</li>
-			<li class="next">Совмещение селекторов</li>
-			<li class="next">Перечисление селекторов</li>
+			<li><strong style="color: red">R</strong> — red</li>
+			<li><strong style="color: green">G</strong> — green</li>
+			<li><strong style="color: blue">B</strong> — blue</li>
 		</ul>
+		<p class="next">Любой цвет составляется комбинацией трёх компонент.</p>
+		<p class="next">Каждая компонента может принмиать значение от 0 до 255, итого 256 вариантов.</p>
+		<p class="next">Благодаря большому количеству комбинаций, пиксель может принимать 256 * 256 * 256 = 16 777 216 цветов.</p>
 	</section>
 
 	<section class="slide">
-		<h2>Почему каскадные?</h2>
-		<p class="next">наследуемые и не наследуемые свойства</p>
-		<p class="next">inherit</p>
-		<p class="next">initial</p>
-		<p class="next">important</p>
+		<h2>Цветовая модель RGB</h2>
+		<p>0 — <strong>минимальное</strong> значение компоненты (отсуствие свечения цвета)</p>
+		<p>255 — <strong>максимальное</strong> значение компоненты (максимальное свечение цвета)</p>
 	</section>
 
 	<section class="slide">
-		<h2>Типы значений</h2>
-		<p class="next">Размер</p>
-		<p class="next">Цвет</p>
-		<p class="next">Адрес</p>
-		<p class="next">Время</p>
-		<p class="next">...</p>
+		<h2>rgb()</h2>
+		<p>Функция, которая возвращает цвет, составленный из трёх компонент.</p>
+		<p>0 — <strong>минимальное</strong> значение компоненты (отсуствие свечения цвета)</p>
+		<p>255 — <strong>максимальное</strong> значение компоненты (максимальное свечение цвета)</p>
+		<div class="double">			
+			<p>rgb(0, 0, 0) — <span class="next" style="background-color: rgb(0, 0, 0); border: 1px dotted black;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></p>
+			<p class="next">rgb(255, 0, 0) — <span class="next" style="background-color: rgb(255, 0, 0); border: 1px dotted black;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></p>
+			<p class="next">rgb(0, 0, 255) — <span class="next" style="background-color: rgb(0, 0, 255); border: 1px dotted black;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></p>
+			<p class="next">rgb(127, 0, 0) — <span class="next" style="background-color: rgb(127, 0, 0); border: 1px dotted black;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></p>
+			<p class="next">rgb(255, 0, 255) — <span class="next" style="background-color: rgb(255, 0, 255); border: 1px dotted black;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></p>
+			<p class="next">rgb(255, 255, 255) — <span class="next" style="background-color: rgb(255, 255, 255); border: 1px dotted black;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></p>
+		</div>
 	</section>
 
 	<section class="slide">
-		<h2>Ещё?</h2>
-		<p class="next">Псевдоклассы</p>
-		<p class="next">Псевдоэлементы</p>
+		<h2>Ключевые слова</h2>
+		<p>red — <span style="background-color: red; border: 1px dotted black;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></p>
+		<p>green — <span style="background-color: green; border: 1px dotted black;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></p>
+		<p>blue — <span style="background-color: blue; border: 1px dotted black;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></p>
+		<p>black — <span style="background-color: black; border: 1px dotted black;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></p>
+		<p>gold — <span style="background-color: gold; border: 1px dotted black;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></p>
+		<p>rebeccapurple — <span style="background-color: rebeccapurple; border: 1px dotted black;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></p>
 	</section>
 
 	<section class="slide">
-		<h2>Откуда брать информацию</h2>
+		<h2>#HEX</h2>
+		<p class="next">Каждая компонента записывается числом от 00 до FF (от 0 до 255).</p>
+		<p class="next">Код пишется после решётки.</p>
+		<p class="next">Код может содержать либо 6, либо 3 цифры. Если цифр 3, каждая дублируется.</p>
+		<p class="next">Регистр не имеет значения.</p>
+	</section>
+
+	<section class="slide">
+		<h2>#HEX: примеры</h2>
+		<p class="next">color: rgb(255, 0, 0)</p>
+		<p class="next">color: red</p>
+		<p class="next">color: #FF0000</p>
+		<p class="next">color: #ff0000</p>
+		<p class="next">color: #f00</p>
+	</section>
+
+	<div class="slide">
+		<h2>Прозрачный цвет (альфа-канал)</h2>
+		<p>Цвет можно указать со степенью прозрачности.</p>
+		<p class="next">Для этого используется другая функция: rgba(red, green, blue, opacity).</p>
+		<p class="next">Opacity — степень прозрачности, от 0 до 1.</p>
+		<p class="next">color: rgba(255, 0, 0, 0.5)</p>
+		<p class="next">color: rgba(255, 0, 0, .5)</p>
+		<p class="next">color: #FF000080 <img src="http://www.clipartbest.com/cliparts/pc5/XKE/pc5XKEqxi.jpg" alt="" class="next" width="50" style="vertical-align: bottom;"></p>
+	</div>
+
+	<div class="slide">
+		<h2>#RRGGBBAA</h2>
+		<p class="ciu_embed" data-feature="css-rrggbbaa" data-periods="future_1,current,past_1,past_2,past_3"><a href="http://caniuse.com/#feat=css-rrggbbaa">Can I Use css-rrggbbaa?</a> Data on support for the css-rrggbbaa feature across the major browsers from caniuse.com.</p>
+	</div>
+
+	<div class="slide">
+		<h2>hsl(), hsla()</h2>
+		<ul class="next">
+			<li>hue — тон [0; 360]</li>
+			<li>saturation — насыщенность (%)</li>
+			<li>lightness — светлота (%)</li>
+		</ul>
+		<em class="next">Не нужно.</em>
+	</div>
+
+	<div class="slide">
+		<h2>Специальные значения</h2>
 		<ul>
-			<li>Спецификация</li>
-			<li>MDN</li>
-			<li>webref</li>
+			<li>transparent</li>
+			<li>currentColor</li>
 		</ul>
-	</section>
+	</div>
 
-	<section class="slide">
-		<h2>Всё!</h2>
-	</section>
+	<div class="slide">
+		<h2>transparent</h2>
+		<ul>
+			<li>Прозрачный цвет</li>
+			<li class="next">Синоним rgba(0, 0, 0, 0)</li>
+			<li class="next">Использовать осторожно!</li>
+		</ul>
+	</div>
+
+	<div class="slide">
+		<h2>currentColor</h2>
+		<p>Специальная константа, возвращающая текущий цвет</p>
+		<div class="next">
+			<div class="current-color">Пример</div>
+<pre>
+<code>.current-color {</code>
+<code>  color: lime;</code>
+<code>  border: 5px dotted currentColor;</code>
+<code>  box-shadow: 15px 15px 5px 0 currentColor;</code>
+<code>}</code>
+<code>.current-color:hover {</code>
+<code>  color: rgba(95, 158, 160, .5);</code>
+<code>}</code>
+</pre>
+<style>
+.current-color {
+  color: lime;
+  border: 5px dotted currentColor;
+  box-shadow: 15px 15px 5px 0 currentColor;
+}
+.current-color:hover {
+  color: rgba(95, 158, 160, .5);
+}
+</style>
+		</div>
+	</div>
 
 	<div class="progress"></div>
 
@@ -139,6 +410,9 @@
 	<!-- Copyright © 2017 Yours Truly, Famous Inc. -->
 
 	<style>
+	.slide {
+		padding-top: 35px;
+	}
 	.caption h2 {
 		padding-bottom: .15em;
 		font: 700 0.8em/1 PT Sans Narrow, sans-serif;
@@ -158,5 +432,9 @@
 text-indent: 0 !important;
 }
 	</style>
+
+	<script>
+		(function(){for(var e=document.getElementsByClassName("ciu_embed"),t=0;t<e.length;t++){var s=e[t],n=s.getAttribute("data-feature"),r=s.getAttribute("data-periods");if(n){var a="http://caniuse.bitsofco.de/embed/index.html",o='<iframe src="'+a+"?feat="+n+"&periods="+r+'" frameborder="0" width="100%" height="400px"></iframe>';s.innerHTML=o}else s.innerHTML="A feature was not included. Go to <a href='http://caniuse.bitsofco.de/#how-to-use'>http://caniuse.bitsofco.de/#how-to-use</a> to generate an embed."}var i=window.addEventListener?"addEventListener":"attachEvent";(0,window[i])("attachEvent"==i?"onmessage":"message",function(t){var s=t.data;if("string"==typeof s&&s.indexOf("ciu_embed")>-1)for(var n=s.split(":")[1],r=s.split(":")[2],a=0;a<e.length;a++){var o=e[a];if(o.getAttribute("data-feature")===n){var i=parseInt(r)+30;o.childNodes[0].height=i+"px";break}}},!1)}).call(this);
+	</script>
 </body>
 </html>
